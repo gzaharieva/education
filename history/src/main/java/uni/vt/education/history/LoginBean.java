@@ -27,9 +27,6 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.ws.BindingProvider;
 
-import de.sepp.bidding.service.InterfaceCallException_Exception;
-import de.sepp.bidding.service.SessionHandlingWS;
-import de.sepp.bidding.service.SessionHandlingWSService;
 
 /**
  * Controls the login process and stores the logged in user
@@ -49,12 +46,10 @@ public class LoginBean implements Serializable
   private String iSessionID;
   private String iUsername;
   private String iPassword;
-  private SessionHandlingWS iPort;
 
   @PostConstruct
   public void postContruct()
   {
-    iPort = new SessionHandlingWSService().getSessionHandlingWSPort();
   }
 
   /**
@@ -105,21 +100,8 @@ public class LoginBean implements Serializable
    */
   public String login()
   {
-    String tResult;
+    String tResult =  null;
 
-    Map<String, Object> tRequestContext = ((BindingProvider) iPort).getRequestContext();
-    tRequestContext.put(BindingProvider.USERNAME_PROPERTY, "FDLWSUser");
-    tRequestContext.put(BindingProvider.PASSWORD_PROPERTY, "init");
-    try
-    {
-      iSessionID = iPort.login(iUsername, iPassword);
-      tResult = SUCCESSFUL_LOGIN;
-    }
-    catch (InterfaceCallException_Exception e)
-    {
-      FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Login fail", ""));
-      tResult = "";
-    }
 
     return tResult;
   }
