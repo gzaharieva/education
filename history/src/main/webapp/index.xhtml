@@ -2,107 +2,118 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
->
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head>
+	<h:head>
 
-	<title>Начало</title>
-<link rel="stylesheet" type="text/css"
-		href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" />
-</h:head>
-<body>
-	<div id="main_container">
-		<div class="top_illustration">
-			<img src="resources/images/been.png" alt="" width="156" height="143" />
-		</div>
-		<div id="header">
-			<div class="logo">
-				<a href="index.xhtml"><img src="resources/images/text.gif"
-					alt="" border="0" /></a>
+		<title>Начало</title>
+		<link rel="stylesheet" type="text/css"
+			href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" />
+	</h:head>
+	<body>
+		<div id="main_container">
+			<div class="top_illustration">
+				<img src="resources/images/been.png" alt="" width="156" height="143" />
 			</div>
-		</div>
-		<div id="menu_tab">
-			<ul class="menu">
-				<li><a href="index.xhtml" class="nav_selected"> Начало </a></li>
-				<li class="divider"></li>
-				<li><a href="tests.html" class="nav"> Тестове</a></li>
-				<li class="divider"></li>
-				<li><a href="subjects.xhtml" class="nav">Теми</a></li>
-				<li class="divider"></li>
-				<li><a href="projects.html" class="nav">Любопитни факти</a></li>
-				<li class="divider"></li>
-				<li><a href="contact.html" class="nav">Контакти</a></li>
-			</ul>
-		</div>
-		<div id="main_content">
-			<div id="middle_banner">
-				<div class="middle_banner_content">
-					<img src="resources/images/3.png" alt="" class="deviz"  />
-
+			<div id="header">
+				<div class="logo">
+					<a href="index.xhtml"><img src="resources/images/text.gif"
+						alt="" border="0" /></a>
 				</div>
 			</div>
-			<div id="left_content">
-			<h1>Скъпи приятели</h1> 
-				<p>Добре дошли в образователния сайт ”Историята - близо до теб”.
-					Използвайки неговото съдържание, вие ще се запознаете с интересни
-					събития, величествени битки и емблематични личности, свързани с
-					многовековната българската история. Тези знания, които може да
-					придобиете ще ви бъдат полезни за да осмислите пътя, паденията и
-					триумфите на българския народ през столетията. Тестовите въпроси ще
-					ви ориетират в нивото на познанията ви и ще затвърдят новото с
-					което сте научили.</p>
-				<br /> <br />
-				<!-- <h1>Нашите услуги</h1> -->
-				<br />
-				<p class="clear">
-					<img src="resources/images/icon4.png" alt="" class="img"
-						width="48" height="48" />Предлага ме ви увлекателни текстове,
-					илюстриращи моменти от българското минало и неговите
-					първостроители.
-				</p>
-				<br /> <br />
-				<p class="clear">
-					<img src="resources/images/tests-icon.png" alt="" class="img"
-						width="48" height="48" />„Колко зная?”Специално подбрани въпроси,
-					под формата на тест.
-				</p>
+			<div id="menu_tab">
+				<ul class="menu">
+					<li><a href="index.xhtml" class="nav_selected"> Начало </a></li>
+					<li class="divider"></li>
+					<li><a href="application/tests.xhtml" class="nav"> Тестове</a></li>
+					<li class="divider"></li>
+					<li><a href="subjects.xhtml" class="nav">Теми</a></li>
+					<li class="divider"></li>
+					<li><a href="projects.html" class="nav">Любопитни факти</a></li>
+					<li class="divider"></li>
+					<li><a href="contact.html" class="nav">Контакти</a></li>
+				</ul>
 			</div>
-			<div id="right_content">
-				<div class="members_login">
-					<h1>Потребителски вход</h1>
-					<div class="login_row">
-						<label class="login">емайл: </label> <input type="text"
-							class="login_input" />
-					</div>
-					<div class="login_row">
-						<label class="login">парола:</label> <input type="password"
-							class="login_input" />
-					</div>
-					<div class="login_row">
-						<a href="" class="login_submit">вход</a>
+			<div id="main_content">
+				<div id="middle_banner">
+					<div class="middle_banner_content">
+						<img src="resources/images/3.png" alt="" class="deviz" />
+
 					</div>
 				</div>
-				<h1 class="label">Интересно</h1>
-				<p class="news">
-					<img src="resources/images/info.png" alt="" class="left_img" />
-					България по време на втората световна война (1939-1945)
-				</p>
-				<p class="news">
-					<img src="resources/images/info.png" alt="" class="left_img" />
-					Държавно-политическо и обществено-икономическо развитие на България
-					(1919 - 1923)
-				</p>
-				<p class="news">
-					<img src="resources/images/info.png" alt="" class="left_img" />Националноосвободително
-					движение от края на 60-те до средата на 70-те години.
-				</p>
-			</div>
-			<div id="footer">
-				<img src="resources/images/footer_logo.gif" alt="" />All rights
-				reserved &copy; 2013 <br />
+				<div id="left_content">
+					<h1>Скъпи приятели</h1>
+					<p>Добре дошли в образователния сайт ”Историята - близо до
+						теб”. Използвайки неговото съдържание, вие ще се запознаете с
+						интересни събития, величествени битки и емблематични личности,
+						свързани с многовековната българската история. Тези знания, които
+						може да придобиете ще ви бъдат полезни за да осмислите пътя,
+						паденията и триумфите на българския народ през столетията.
+						Тестовите въпроси ще ви ориетират в нивото на познанията ви и ще
+						затвърдят новото с което сте научили.</p>
+					<br /> <br />
+					<!-- <h1>Нашите услуги</h1> -->
+					<br />
+					<p class="clear">
+						<img src="resources/images/icon4.png" alt="" class="img"
+							width="48" height="48" />Предлага ме ви увлекателни текстове,
+						илюстриращи моменти от българското минало и неговите
+						първостроители.
+					</p>
+					<br /> <br />
+					<p class="clear">
+						<img src="resources/images/tests-icon.png" alt="" class="img"
+							width="48" height="48" />„Колко зная?”Специално подбрани
+						въпроси, под формата на тест.
+					</p>
+				</div>
+				<div id="right_content">
+					<div class="members_login">
+						<h:form rendered="#{loginBean.logged == false}">
+							<div class="login_row">
+								<h:outputLabel value="Потребителски вход" />
+								<h:panelGrid columns="2">
+									<h:outputLabel value="Емайл:" for="email" />
+									<h:inputText id="email" value="#{loginBean.user.email}"
+										required="true" />
+
+									<h:outputLabel value="Парола:" for="password" />
+									<h:inputSecret id="password" value="#{loginBean.user.password}" />
+
+									<br />
+									<h:commandButton value="Вход" action="#{loginBean.login}" />
+
+								</h:panelGrid>
+							</div>
+						</h:form>
+						<h:form rendered="#{loginBean.logged == true}">
+							<div class="login_row">
+								<h:outputLabel value="Здравей, #{loginBean.user.name}" />
+								<br />
+								<h:commandButton value="Изход" action="#{loginBean.logout()}" />
+							</div>
+						</h:form>
+					</div>
+					<h1 class="label">Интересно</h1>
+					<p class="news">
+						<img src="resources/images/info.png" alt="" class="left_img" />
+						България по време на втората световна война (1939-1945)
+					</p>
+					<p class="news">
+						<img src="resources/images/info.png" alt="" class="left_img" />
+						Държавно-политическо и обществено-икономическо развитие на
+						България (1919 - 1923)
+					</p>
+					<p class="news">
+						<img src="resources/images/info.png" alt="" class="left_img" />Националноосвободително
+						движение от края на 60-те до средата на 70-те години.
+					</p>
+				</div>
+				<div id="footer">
+					<img src="resources/images/footer_logo.gif" alt="" />All rights
+					reserved &copy; 2013 <br />
+				</div>
 			</div>
 		</div>
-	</div>
-</body>
+	</body>
 </ui:composition>

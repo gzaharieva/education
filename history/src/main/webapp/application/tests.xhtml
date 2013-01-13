@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<h:head>
+
+		<title>Начало</title>
+		<link rel="stylesheet" type="text/css"
+			href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" />
+	</h:head>
+	<body>
+		<div id="main_container">
+			<div class="top_illustration">
+				<img src="../resources/images/been.png" alt="" width="156"
+					height="143" />
+			</div>
+			<div id="header">
+				<div class="logo">
+					<a href="../index.xhtml"><img
+						src="../resources/images/text.gif" alt="" border="0" /></a>
+				</div>
+			</div>
+			<div id="menu_tab">
+				<ul class="menu">
+					<li><a href="../index.xhtml" class="nav"> Начало </a></li>
+					<li class="divider"></li>
+					<li><a href="tests.xhtml" class="nav_selected"> Тестове</a></li>
+					<li class="divider"></li>
+					<li><a href="../subjects.xhtml" class="nav">Теми</a></li>
+					<li class="divider"></li>
+					<li><a href="../projects.html" class="nav">Любопитни факти</a></li>
+					<li class="divider"></li>
+					<li><a href="../contact.html" class="nav">Контакти</a></li>
+				</ul>
+			</div>
+			<div id="main_content">
+				<div id="middle_banner">
+					<div class="middle_banner_content">
+						<img src="../resources/images/3.png" alt="" class="deviz" />
+
+					</div>
+				</div>
+				<div id="left_content">
+					<center>
+						<br />
+						<h:commandButton value="Start">
+							<rich:componentControl target="popup" operation="show" />
+						</h:commandButton>
+					</center>
+				</div>
+				<div id="right_content">
+					<div class="members_login">
+						<h:form rendered="#{loginBean.logged == false}">
+							<div class="login_row">
+								<h:outputLabel value="Потребителски вход" />
+								<h:panelGrid columns="2">
+									<h:outputLabel value="Емайл:" for="email" />
+									<h:inputText id="email" value="#{loginBean.user.email}"
+										required="true" />
+
+									<h:outputLabel value="Парола:" for="password" />
+									<h:inputSecret id="password" value="#{loginBean.user.password}" />
+
+									<br />
+									<h:commandButton value="Вход" action="#{loginBean.login}" />
+
+								</h:panelGrid>
+							</div>
+						</h:form>
+						<h:form rendered="#{loginBean.logged == true}">
+							<div class="login_row">
+								<h:outputLabel value="Здравей, #{loginBean.user.name}" />
+								<br />
+								<h:commandButton value="Изход" action="#{loginBean.logout()}" />
+							</div>
+						</h:form>
+					</div>
+					<h1 class="label">Интересно</h1>
+					<p class="news">
+						<img src="../resources/images/info.png" alt="" class="left_img" />
+						България по време на втората световна война (1939-1945)
+					</p>
+					<p class="news">
+						<img src="../resources/images/info.png" alt="" class="left_img" />
+						Държавно-политическо и обществено-икономическо развитие на
+						България (1919 - 1923)
+					</p>
+					<p class="news">
+						<img src="../resources/images/info.png" alt="" class="left_img" />Националноосвободително
+						движение от края на 60-те до средата на 70-те години.
+					</p>
+				</div>
+				<div id="footer">
+					<img src="../resources/images/footer_logo.gif" alt="" />All rights
+					reserved &copy; 2013 <br />
+				</div>
+			</div>
+		</div>
+
+		<rich:popupPanel id="popup" modal="true" resizeable="false" width="680" height="550">
+			<f:facet name="header">
+				<h:outputText value="Tests" />
+			</f:facet>
+			<f:facet name="controls">
+				<h:outputLink value="#"
+					onclick="#{rich:component('popup')}.hide(); return false;">
+                X
+            </h:outputLink>
+			</f:facet>
+
+			<h:panelGrid>
+				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+					codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+					width="636" height="482" id="sf">
+					<param name="movie" value="../quiz.swf" />
+					<param name="quality" value="high" />
+					<param name="wmode" value="window" />
+					<param name="allowScriptAccess" value="always" />
+					<param name="allowFullScreen" value="true" />
+					<embed src="../quiz.swf" quality="high" name="sf"
+						allowScriptAccess="always" allowFullScreen="true"
+						pluginspage="http://www.macromedia.com/go/getflashplayer"
+						type="application/x-shockwave-flash" width="636" height="482" />
+				</object>
+			</h:panelGrid>
+
+		</rich:popupPanel>
+	</body>
+</ui:composition>

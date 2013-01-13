@@ -16,17 +16,16 @@
 package uni.vt.education.history;
 
 import java.io.Serializable;
-import java.util.Map;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
+import javax.annotation.Resource;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.ws.BindingProvider;
 
+import uni.vt.education.history.model.User;
 
 /**
  * Controls the login process and stores the logged in user
@@ -35,93 +34,69 @@ import javax.xml.ws.BindingProvider;
  */
 @SessionScoped
 @ManagedBean
-public class LoginBean implements Serializable
-{
+public class LoginBean implements Serializable {
 
-  private static final long serialVersionUID = 6704436797880373164L;
-  private static final String SUCCESSFUL_LOGIN = "success";
-  private static final String LOGOUT = "logout";
-  public static final String SESSION_ID = "SESSION_ID";
+	private static final long serialVersionUID = 6704436797880373164L;
+	private static final String SUCCESSFUL_LOGIN = "success";
+	private static final String LOGOUT = "logout";
+	public static final String SESSION_ID = "SESSION_ID";
 
-  private String iSessionID;
-  private String iUsername;
-  private String iPassword;
+	private User user;
+	private boolean logged;
 
-  @PostConstruct
-  public void postContruct()
-  {
-  }
+	@PostConstruct
+	public void postContruct() {
+		user = new User();
+		logged = false;
+	}
 
-  /**
-   * Get username
-   * 
-   * @return the Username
-   */
-  public String getUsername()
-  {
-    return iUsername;
-  }
+	public User getUser() {
+		return user;
+	}
 
-  /**
-   * Set username
-   * 
-   * @param aUsername the Username to set
-   */
-  public void setUsername(String aUsername)
-  {
-    this.iUsername = aUsername;
-  }
+	public void setUser(User user) {
+		this.user = user;
+	}
 
-  /**
-   * Get password
-   * 
-   * @return the Password
-   */
-  public String getPassword()
-  {
-    return iPassword;
-  }
+	public boolean isLogged() {
+		return logged;
+	}
 
-  /**
-   * Set password
-   * 
-   * @param aPassword the iPassword to set
-   */
-  public void setPassword(String aPassword)
-  {
-    this.iPassword = aPassword;
-  }
+	public void setLogged(boolean logged) {
+		this.logged = logged;
+	}
 
-  /**
-   * The user logs into the system. He has access to all functionality after log in.
-   * 
-   * @return "successfulLogin" if the user has entered valid username and password or
-   * <code>null</code> otherwise
-   */
-  public String login()
-  {
-    String tResult =  null;
+	/**
+	 * The user logs into the system. He has access to all functionality after
+	 * log in.
+	 * 
+	 * @return "successfulLogin" if the user has entered valid username and
+	 *         password or <code>null</code> otherwise
+	 */
+	public String login() {
+		String tResult = null;
+//		MySQLAccess access = new MySQLAccess();
+//		User tempUser = access.login(user);
+//		if(tempUser.getName() != null){
+//			user = tempUser;
+//			setLogged(true);
+//		}
+		return tResult;
+	}
 
+	/**
+	 * User logs out from the system and goes to the Bidding Home page
+	 * 
+	 * @return Logout the application
+	 */
+	public String logout() {
+		ExternalContext tExternalContext = FacesContext.getCurrentInstance()
+				.getExternalContext();
+		
+		final HttpServletRequest tRequest = (HttpServletRequest) tExternalContext
+				.getRequest();
+		tRequest.getSession(false).invalidate();
 
-    return tResult;
-  }
-
-  /**
-   * User logs out from the system and goes to the Bidding Home page
-   * 
-   * @return Logout the application
-   */
-  public String logout()
-  {
-    ExternalContext tExternalContext = FacesContext.getCurrentInstance().getExternalContext();
-    if (SESSION_ID != null && SESSION_ID.isEmpty())
-    {
-      iSessionID = tExternalContext.getSessionMap().get(SESSION_ID).toString();
-      // iPort.logout(iSessionID);
-    }
-    final HttpServletRequest tRequest = (HttpServletRequest) tExternalContext.getRequest();
-    tRequest.getSession(false).invalidate();
-
-    return LOGOUT;
-  }
+		return LOGOUT;
+	}
 }

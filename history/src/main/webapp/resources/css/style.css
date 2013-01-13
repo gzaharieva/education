@@ -57,7 +57,7 @@ h1 {
 }
 
 #main_container {
-	width: 900px;
+	width: 950px;
 	height: auto;
 	margin: auto;
 	padding: 0px;
@@ -82,7 +82,7 @@ h1 {
 
 /*---------------- menu tab----------------------*/
 #menu_tab {
-	width: 900px;
+	width: 950px;
 	height: 52px;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 0px;
