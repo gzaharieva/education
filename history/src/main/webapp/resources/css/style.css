@@ -412,3 +412,23 @@ input.contact_submit {
 	width: 130px;
 	height: 100px;
 }
+
+.war_images {
+	width: 256px;
+	height: 200px;
+	margin: 7px;
+}
+
+.flash_video {
+	margin-top:-450px;
+}
+
+.panel {
+	
+	top:100px!important;
+	text-align: justify;
+	
+}
+.ui-widget {
+	font-size: 1.5em!important;
+}

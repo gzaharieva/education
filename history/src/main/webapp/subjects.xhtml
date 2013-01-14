@@ -2,142 +2,152 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets" 	
-	xmlns:rich="http://richfaces.org/rich">
-
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+`<f:loadBundle var="msg" basename="messages" />
 	<h:head>
-	<!-- Start VideoLightBox.com HEAD section -->
-<link rel="stylesheet" href="videogallery_videolb/videolightbox.css" type="text/css" />
-
-			<link rel="stylesheet" type="text/css" href="videogallery_videolb/overlay-minimal.css"/>
-			<script src="videogallery_videolb/jquery.js" type="text/javascript"></script>
-			<script src="videogallery_videolb/swfobject.js" type="text/javascript"></script>
-<!-- End VideoLightBox.com HEAD section -->
 		<title>Статии и видео</title>
 		<link rel="stylesheet" type="text/css"
 			href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" />
 
-		<script type="text/javascript"
-			src="#{facesContext.externalContext.requestContextPath}/resources/javascript/jquery-1-4-2.min.js"></script>
-		<script type="text/JavaScript"
-			src="#{facesContext.externalContext.requestContextPath}/resources/javascript/cloud-carousel.1.0.5.js"></script>
-
-		<script type="text/javascript">
-$(document).ready(function(){
-						   
-	// This initialises carousels on the container elements specified, in this case, carousel1.
-	$("#carousel1").CloudCarousel(		
-		{			
-			reflHeight: 40,
-			reflGap:2,
-			titleBox: $('#da-vinci-title'),
-			altBox: $('#da-vinci-alt'),
-			buttonLeft: $('#slider-left-but'),
-			buttonRight: $('#slider-right-but'),
-			yRadius:30,
-			xPos: 480,
-			yPos: 32,
-			speed:0.15,
-		}
-	);
-});
- 
-</script>
 	</h:head>
 	<h:body>
-	
-		<div id="main_container">
-			<div class="top_illustration">
-				<img src="resources/images/been.png" alt="" width="156" height="143" />
-			</div>
-			<div id="header">
-				<div class="logo">
-					<a href="index.xhtml"><img src="resources/images/text.gif"
-						alt="" border="0" /></a>
+		<h:form id="form">
+			<div id="main_container">
+				<div class="top_illustration">
+					<img src="resources/images/been.png" alt="" width="156"
+						height="143" />
 				</div>
-			</div>
-			<div id="menu_tab">
-				<ul class="menu">
-					<li><a href="index.xhtml" class="nav"> Начало </a></li>
-					<li class="divider"></li>
-					<li><a href="tests.xhtml" class="nav"> Тестове</a></li>
-					<li class="divider"></li>
-					<li><a href="subjects.xhtml" class="nav_selected">Теми</a></li>
-					<li class="divider"></li>
-					<li><a href="contact.html" class="nav">Контакти</a></li>
-				</ul>
-			</div>
-			<div id="main_content">
-				<center>
-					<!-- This is the container for the carousel. -->
-					<div id="carousel1"
-						style="width: 860px; height: 280px; background: none; overflow: scroll; margin-left: -97px;">
-						<!-- All images with class of "cloudcarousel" will be turned into carousel items -->
-						<!-- You can place links around these images -->
-						<div style="margin-left: -37px;">
-							<a href="" rel="lightbox"><img class="cloudcarousel"
-								src="resources/images/slider/01.jpg" alt="CSS Templates 1"
-								title="Website Templates 1" /></a> <a href="" rel="lightbox">
-								
-								<img class="cloudcarousel" src="resources/images/slider/02.jpg"
-								alt="CSS Templates 2" title="Website Templates 2" /></a> <a href=""
-								rel="lightbox"><img class="cloudcarousel"
-								src="resources/images/slider/03.jpg" alt="CSS Templates 3"
-								title="Website Templates 3" /></a> <a href="" rel="lightbox"><img
-								class="cloudcarousel" src="resources/images/slider/04.jpg"
-								alt="CSS Templates 4" title="Website Templates 4" /></a> <a href=""
-								rel="lightbox"><img class="cloudcarousel"
-								src="resources/images/slider/05.jpg" alt="Flash Templates 1"
-								title="Flash Templates 1" /></a> <a href="" rel="lightbox"><img
-								class="cloudcarousel" src="resources/images/slider/06.jpg"
-								alt="Flash Templates 2" title="Flash Templates 2" /></a> <a href=""
-								rel="lightbox"><img class="cloudcarousel"
-								src="resources/images/slider/07.jpg" alt="Flash Templates 3"
-								title="Flash Templates 3" /></a> <a href="" rel="lightbox"><img
-								class="cloudcarousel" src="resources/images/slider/08.jpg"
-								alt="Flash Templates 4" title="Flash Templates 4" /></a>
-						</div>
+				<div id="header">
+					<div class="logo">
+						<a href="index.xhtml"><img src="resources/images/text.gif"
+							alt="" border="0" /></a>
 					</div>
-
-					<!-- Define left and right buttons. -->
-
-					<input id="slider-left-but" type="button" value="" /> <input
-						id="slider-right-but" type="button" value="" />
-				</center>
-
-				<div id="left_content_subjects">
-					<p class="clear">
-							<a href="subjects.xhtml"><img src="resources/images/speech_bubble_grey.png" alt="" class="left_img"
-								width="48" height="48" />България по време на втората световна война (1939-1945)</a>
-								<br />
-								<hr />
-								<a href="subjects.xhtml"><img src="resources/images/speech_bubble_grey.png" alt="" class="left_img"
-								width="48" height="48" />България по време на втората световна война (1939-1945)</a>
-								<hr />
-								<a href="subjects.xhtml"><img src="resources/images/speech_bubble_grey.png" alt="" class="left_img"
-								width="48" height="48" />България по време на втората световна война (1939-1945)</a>
-								<hr />
-								<a href="subjects.xhtml"><img src="resources/images/speech_bubble_grey.png" alt="" class="left_img"
-								width="48" height="48" />България по време на втората световна война (1939-1945)</a>
-						</p>
 				</div>
-				<div id="right_content_subjects">
-					<h1 >Видео</h1>
-					<!-- Start VideoLightBox.com BODY section -->
-<div class="videogallery">
-<a class="voverlay" href="http://www.youtube.com/v/vAng4YG1vXg?autoplay=1" title="��� �� �. �. ��� ����� III"><img src="videogallery_videolb/thumbnails/0.png" alt="��� �� �. �. ��� ����� III" /><span></span></a>
-<a class="voverlay" href="http://www.youtube.com/v/LGJveI6e8OY?autoplay=1" title="��������� ����� - ������� �������� ����� ( ���� 1 )"><img src="videogallery_videolb/thumbnails/1.png" alt="��������� ����� - ������� �������� ����� ( ���� 1 )" /><span></span></a>
-<a class="voverlay" href="http://www.youtube.com/v/l-VLctV5OWQ?autoplay=1" title="��������� ����� - ������� �������� ����� ( ���� 3 )"><img src="videogallery_videolb/thumbnails/2.png" alt="��������� ����� - ������� �������� ����� ( ���� 3 )" /><span></span></a><a class="videolb" href="http://videolightbox.com">Lightbox to Flash by VideoLightBox.com v2.1</a>
-</div>
-<script src="videogallery_videolb/jquery.tools.min.js" type="text/javascript"></script>
-<script src="videogallery_videolb/videolightbox.js" type="text/javascript"></script>
-<!-- End VideoLightBox.com BODY section -->
+				<div id="menu_tab">
+					<ul class="menu">
+						<li><a href="index.xhtml" class="nav"> Начало </a></li>
+						<li class="divider"></li>
+						<li><a href="tests.xhtml" class="nav"> Тестове</a></li>
+						<li class="divider"></li>
+						<li><a href="subjects.xhtml" class="nav_selected">Теми</a></li>
+						<li class="divider"></li>
+						<li><a href="contact.html" class="nav">Контакти</a></li>
+					</ul>
 				</div>
-			<div id="footer">
-				<img src="resources/images/footer_logo.gif" alt="" />All rights
-				reserved &copy; 2013 <br />
+				<div id="main_content">
+					<center>
+						<p:galleria value="#{galleriaBean.images}" var="image">
+							<p:graphicImage value="resources/images/slider/#{image}" />
+						</p:galleria>
+					</center>
+					<div id="left_content_subjects">
+						<p:accordionPanel multiple="true">
+							<p:tab title="България в Първата световна война (1914-1919 г.)">
+								<h:panelGrid columns="2" cellpadding="1"
+									style="text-align:justify">
+									<p:graphicImage value="resources/images/war1.jpg"
+										styleClass="war_images" />
+									<h:outputText
+										value="Първата световна война избухва в резултат на противоречията между Великите сили, 
+									борещи се за икономическо и политическо преразпределение на света. След оформянето на 
+									двата големи блока – Тройния съюз 
+									(Германия, Австро-Унгария и Италия) и Антантата (Англия, Франция и Русия) – 
+									войната в Европа се приближава неумолимо с всяка изминала година...  " />
+									<p:commandLink value="Виж още." onclick="war1.show();" >
+									
+									</p:commandLink>
+									
+								</h:panelGrid>
+							</p:tab>
+							<p:tab title="България в Балканските войни">
+								<h:panelGrid columns="2" cellpadding="10">
+									<p:graphicImage value="resources/images/war2.jpg"
+										styleClass="war_images" />
+									<h:outputText
+										value=" В резултат на възрожденските борби на
+									българската нация и на Руско-турската война (1877-1878 г.) се
+									възобновява българската държавност след почти 500-годишно
+									прекъсване. Създаването на Третото българско царство, обаче, е
+									съпътствано от първото крушение на националните идеали
+									посредством" />
+									<p:commandLink value="Виж още." onclick="war2.show();"  />
+								</h:panelGrid>
+							</p:tab>
+							<p:tab
+								title="Българският национален въпрос от Берлинския конгрес до Балканските войни">
+								<h:panelGrid columns="2" cellpadding="10">
+									<p:graphicImage value="resources/images/war3.jpg"
+										styleClass="war_images" />
+									<h:outputText
+										value="    В резултат на възрожденските борби на българската нация и на 
+									Руско-турската война (1877-1878 г.) се възобновява българската държавност 
+									след почти 500-годишно прекъсване. Създаването на третото българско царство, 
+									обаче, е съпътствано от първото крушение на националните идеали посредством разпокъсването" />
+									<p:commandLink value="Виж още." onclick="war3.show();" />
+								</h:panelGrid>
+							</p:tab>
+						</p:accordionPanel>
+					</div>
+					<div id="right_content_subjects">
+						<h1>Видео</h1>
+						<p:lightBox>
+							<h:outputLink value="#">
+								<h:graphicImage value="resources/images/videos/video1.jpg" />
+							</h:outputLink>
+
+							<f:facet name="inline" widgetVar="popup">
+								<p:media value="http://www.youtube.com/v/l-VLctV5OWQ?autoplay=1"
+									width="570" height="400" player="flash"
+									styleClass="flash_video" />
+							</f:facet>
+						</p:lightBox>
+						<p:lightBox>
+							<h:outputLink value="#">
+								<h:graphicImage value="resources/images/videos/video2.jpg" />
+							</h:outputLink>
+
+							<f:facet name="inline">
+								<p:media value="http://www.youtube.com/v/LGJveI6e8OY?autoplay=1"
+									width="570" height="400" player="flash"
+									styleClass="flash_video" />
+							</f:facet>
+						</p:lightBox>
+						<p:lightBox>
+							<h:outputLink value="#">
+								<h:graphicImage value="resources/images/videos/video3.jpg" />
+							</h:outputLink>
+
+							<f:facet name="inline">
+								<p:media value="http://www.youtube.com/v/l-VLctV5OWQ?autoplay=1"
+									width="570" height="400" player="flash"
+									styleClass="flash_video" />
+							</f:facet>
+						</p:lightBox>
+					</div>
+					<div id="footer">
+						<img src="resources/images/footer_logo.gif" alt="" />All rights
+						reserved &copy; 2013 <br />
+					</div>
+				</div>
 			</div>
-			</div>
-		</div>
+
+			<p:dialog id="war1" header="#{msg['war1.title']}" widgetVar="war1"
+				modal="true"  width="700" styleClass="panel">
+				<h:outputText value="#{msg['war1']}" />
+			</p:dialog>
+
+			<p:dialog id="war2" header="#{msg['war2.title']}" widgetVar="war2"
+				modal="true" width="700" styleClass="panel">
+				<h:outputText value="#{msg['war2']}" />
+			</p:dialog>
+
+			<p:dialog id="war3" header="#{msg['war3.title']}" widgetVar="war3"
+				modal="true" width="700" styleClass="panel">
+				<h:outputText value="#{msg['war3']}" />
+			</p:dialog>
+			
+		</h:form>
+		
 	</h:body>
 </ui:composition>
