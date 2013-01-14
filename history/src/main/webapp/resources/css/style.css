@@ -77,12 +77,12 @@ h1 {
 }
 
 .logo {
-	
+	margin-left: -20px;
 }
 
 /*---------------- menu tab----------------------*/
 #menu_tab {
-	width: 950px;
+	width: 900px;
 	height: 52px;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 0px;
@@ -98,6 +98,7 @@ ul.menu {
 	padding: 0px;
 	background: none;
 	font-size: 14px !important;
+	text-align: center;
 }
 
 a {
@@ -127,7 +128,7 @@ a.nav:link,a.nav:visited {
 	padding: 0px;
 	margin: 0;
 	width: auto;
-	margin: 0px 14px 0px 14px;
+	margin: 0px 23px 0px 23px;
 	text-align: center;
 	text-decoration: none;
 	background: none;
@@ -153,7 +154,7 @@ a.nav:hover {
 
 /*----------------main_content----------------*/
 #main_content {
-	width: auto;
+	width: 900px;
 	clear: both;
 	background-color: #FFFFFF;
 	height: auto;
@@ -165,6 +166,15 @@ a.nav:hover {
 	margin: auto;
 	padding: 20px 0 0 0;
 	background: url(../images/middle_banner_bg.jpg) no-repeat center;
+	background-size: 800px 260px;
+}
+
+#middle_banner_tests{
+	width: 800px;
+	height: 250px;
+	margin: auto;
+	padding: 20px 0 0 0;
+	background: url(../images/quiz_banner.jpg) no-repeat center;
 	background-size: 800px 260px;
 }
 
@@ -183,7 +193,7 @@ a.nav:hover {
 	width: 265px;
 	float: left;
 	height: auto;
-	padding: 10px 0 0 20px;
+	padding: 10px 0 0 40px;
 }
 
 #left_content_subjects {
@@ -210,7 +220,8 @@ a.nav:hover {
 	height: 138px;
 	padding: 10px 0 0 10px;
 	background: url(../images/login_bg.gif) no-repeat center;
-	margin: auto;
+	margin-top: 40;
+	
 }
 
 .login_row {
@@ -224,6 +235,7 @@ label.login {
 	float: left;
 	text-align: right;
 	padding: 4px 8px 0 0;
+	font-size:10px;
 }
 
 input.login_input {
@@ -383,3 +395,20 @@ input.contact_submit {
 		height: 40px;
 }
 
+.login_label {
+	font-size: 10px;
+}
+
+
+/************TESTS page***************/
+.image_test {
+	width: 130px;
+	height: 100px;
+	float: left;	
+	margin: 20px;
+}
+
+.image_test_link {	
+	width: 130px;
+	height: 100px;
+}

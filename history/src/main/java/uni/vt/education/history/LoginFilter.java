@@ -31,13 +31,13 @@ public class LoginFilter implements Filter {
 			FilterChain aChain) throws IOException, ServletException {
 		HttpServletRequest tRequest = (HttpServletRequest) aRequset;
 		HttpSession tSession = tRequest.getSession();
-		if (tSession.getAttribute("SessionId") != null) {
+//		if (tSession.getAttribute("SessionId") != null) {
 			aChain.doFilter(aRequset, aResponse);
-		} else {
-			HttpServletResponse tResponse = (HttpServletResponse) aResponse;
-			tResponse.sendRedirect(tRequest.getContextPath() + LOGIN_PAGE);
-			return;
-		}
+//		} else {
+//			HttpServletResponse tResponse = (HttpServletResponse) aResponse;
+//			tResponse.sendRedirect(tRequest.getContextPath() + LOGIN_PAGE);
+//			return;
+//		}
 	}
 
 	@Override

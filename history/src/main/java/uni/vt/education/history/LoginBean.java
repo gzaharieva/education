@@ -24,6 +24,7 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 
+import uni.vt.education.history.db.UserDAO;
 import uni.vt.education.history.model.User;
 
 /**
@@ -40,16 +41,23 @@ public class LoginBean implements Serializable {
 	private static final String LOGOUT = "logout";
 	public static final String SESSION_ID = "SESSION_ID";
 
+    private UserDAO userDAO;
+
 	private User user;
 	private boolean logged;
+	private String email;
+	private String password;
 
 	@PostConstruct
 	public void postContruct() {
 		user = new User();
 		logged = false;
+		 userDAO = new UserDAO();
+		 System.out.println("Contructor - Login Bean");
 	}
 
 	public User getUser() {
+		
 		return user;
 	}
 
@@ -63,6 +71,36 @@ public class LoginBean implements Serializable {
 
 	public void setLogged(boolean logged) {
 		this.logged = logged;
+	}
+	
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		System.out.println("set email");
+		this.email = email;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	/**
@@ -80,6 +118,11 @@ public class LoginBean implements Serializable {
 //			user = tempUser;
 //			setLogged(true);
 //		}
+		System.out.println("Login");
+		User newuser = userDAO.getUser(user.getEmail(), user.getPassword());
+		if(newuser != null){
+			System.out.println(" logged in");
+		}
 		return tResult;
 	}
 

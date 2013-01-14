@@ -2,7 +2,8 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
 
 	<h:head>
 
@@ -11,6 +12,7 @@
 			href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" />
 	</h:head>
 	<body>
+	<h:form>
 		<div id="main_container">
 			<div class="top_illustration">
 				<img src="resources/images/been.png" alt="" width="156" height="143" />
@@ -22,14 +24,12 @@
 				</div>
 			</div>
 			<div id="menu_tab">
-				<ul class="menu">
+				<ul class="menu" style="text-align: center; margin: auto">
 					<li><a href="index.xhtml" class="nav_selected"> Начало </a></li>
 					<li class="divider"></li>
-					<li><a href="application/tests.xhtml" class="nav"> Тестове</a></li>
+					<li><a href="tests.xhtml" class="nav"> Тестове</a></li>
 					<li class="divider"></li>
 					<li><a href="subjects.xhtml" class="nav">Теми</a></li>
-					<li class="divider"></li>
-					<li><a href="projects.html" class="nav">Любопитни факти</a></li>
 					<li class="divider"></li>
 					<li><a href="contact.html" class="nav">Контакти</a></li>
 				</ul>
@@ -73,11 +73,13 @@
 							<div class="login_row">
 								<h:outputLabel value="Потребителски вход" />
 								<h:panelGrid columns="2">
-									<h:outputLabel value="Емайл:" for="email" />
+									<h:outputLabel value="Емайл:" for="email"
+										styleClass="login_label" />
 									<h:inputText id="email" value="#{loginBean.user.email}"
 										required="true" />
 
-									<h:outputLabel value="Парола:" for="password" />
+									<h:outputLabel value="Парола:" for="password"
+										styleClass="login_label" />
 									<h:inputSecret id="password" value="#{loginBean.user.password}" />
 
 									<br />
@@ -88,26 +90,39 @@
 						</h:form>
 						<h:form rendered="#{loginBean.logged == true}">
 							<div class="login_row">
-								<h:outputLabel value="Здравей, #{loginBean.user.name}" />
+								<h:outputLabel value="Здравей, #{loginBean.username}" />
 								<br />
 								<h:commandButton value="Изход" action="#{loginBean.logout()}" />
 							</div>
 						</h:form>
 					</div>
 					<h1 class="label">Интересно</h1>
+					<div style="text-align:center">	
+					<h:commandLink value="">
 					<p class="news">
 						<img src="resources/images/info.png" alt="" class="left_img" />
 						България по време на втората световна война (1939-1945)
 					</p>
-					<p class="news">
-						<img src="resources/images/info.png" alt="" class="left_img" />
-						Държавно-политическо и обществено-икономическо развитие на
-						България (1919 - 1923)
-					</p>
+						<rich:componentControl target="popup" operation="show" />
+					</h:commandLink>
+					
+					<h:commandLink value="">
+						<p class="news">
+							<img src="resources/images/info.png" alt="" class="left_img" />
+							Държавно-политическо и обществено-икономическо развитие на
+							България (1919 - 1923)
+						</p>
+						<rich:componentControl target="popup" operation="show" />
+					</h:commandLink>
+					
+					<h:commandLink value="">
 					<p class="news">
 						<img src="resources/images/info.png" alt="" class="left_img" />Националноосвободително
 						движение от края на 60-те до средата на 70-те години.
 					</p>
+					<rich:componentControl target="popup" operation="show" />
+					</h:commandLink>
+					</div>
 				</div>
 				<div id="footer">
 					<img src="resources/images/footer_logo.gif" alt="" />All rights
@@ -115,5 +130,29 @@
 				</div>
 			</div>
 		</div>
+
+		<rich:popupPanel id="popup" modal="true" resizeable="false"
+			width="680" height="550">
+			<f:facet name="header">
+				<h:outputText value="Tests" />
+			</f:facet>
+			<f:facet name="controls">
+				<h:outputLink value="#"
+					onclick="#{rich:component('popup')}.hide(); return false;">
+                X
+            </h:outputLink>
+			</f:facet>
+
+			<h:panelGrid style="text-align:justify">
+			<h3>България по време на втората световна война (1939-1945)</h3>
+			<hr />
+				<h:outputText
+					value="  Сключването на Версайската система от мирни договори (1919 г.), която фиксира края на Първата световна война, прехвърляйки цялата вина само върху победените, поставя началото на пътя към Втората световна война. Териториално и икономически ограбени, национално унизени и лишени от собствена армия, победените държави стават гнездо на един неизбежен реваншизъм. Идеята за ревизия на мирните договори се предвожда от Германия, особено след като през 1933 г. Адолф Хитлер идва на власт. Германия започва да отхвърля една след друга ограничителните клаузи на Версайския договор. През 1935 година Германия въвежда отново задължителната военна повинност, а на следващата година окупира със своитевойски демилитаризираната от договора Рейнска област. Разочарованата от резултатите от Първата световна вийна Италия също започва експанзионистична политика и окупира Етиопия. Далновидните политици си дават сметка, че избухването на войната е въпрос на време.
+                       Инициативата на фашистките държави не се посреща с нужното внимание и решителност от страна на Англия и Франция. Що се отнася до СССР, Москва никога не се примирява със загубените след Първата световна война територии и също се ориентира към ревизия.
+                   В тази сложна обстановка за България няма друга алтернатива освен да поддържа своя неутралитет и необвързаност. В началото на 30-те години неутралитетът дава своите първи плодове с премахването на репарационните задължения. На преден план излизат надеждите за постигане на освобождаване на страната от ограничителните военни клаузи. Пред настъпващата война българското правителство разбира много добре, че без модернизирана армия няма да има възможност да отстоява своите национални интереси и суверенитет. След като се допуска въоръжаването на Германия, не закъснява и “пробивът” за България. На 31 юли 1938 година България подписва със страните от Балканския пакт (Гърция, Турция, Румъния и Югославия) Солунската спогодба, която премахва ограничителните военни клаузи за страната ни. Чрез тази спогодба България отхвърля най-тежките клаузи на Ньойския договор, без да нарушава своя неутралитет и необвързаност и без да поема допълнителни ангажименти в замяна на възвърнатото право. От този момент външната политика на България се подчинява на стремежа за постигане на мирна ревизия." />
+			</h:panelGrid>
+
+		</rich:popupPanel>
+		</h:form>
 	</body>
 </ui:composition>

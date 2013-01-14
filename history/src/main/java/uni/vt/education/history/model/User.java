@@ -2,24 +2,23 @@ package uni.vt.education.history.model;
 
 public class User {
 
+	private int id;
 	private String email;
 	private String password;
-	private String name;
+	private String username;
 	private String rank;
 	private int score;
 
 	public User() {
-		this(null, null, null, null, 0);
+		this(0, null, null, null);
 	}
 
-	public User(String email, String password, String name, String rank,
-			int score) {
+	public User(int id, String email, String password, String name) {
 		super();
+		this.id = id;
 		this.email = email;
 		this.password = password;
-		this.name = name;
-		this.rank = rank;
-		this.score = score;
+		this.username = name;
 	}
 
 	public String getEmail() {
@@ -38,12 +37,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getRank() {
@@ -60,6 +59,21 @@ public class User {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
 	};
 
+	
 }
