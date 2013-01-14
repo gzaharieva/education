@@ -89,34 +89,12 @@
 					<div id="right_content">
 						<div class="members_login">
 							<h:form rendered="#{loginBean.logged == false}">
-								<div class="login_row">
-									<h:outputLabel value="Потребителски вход" />
-									<h:panelGrid columns="2">
-										<h:outputLabel value="Емайл:" for="email"
-											styleClass="login_label" />
-										<h:inputText id="email" value="#{loginBean.user.email}"
-											required="true" />
-
-										<h:outputLabel value="Парола:" for="password"
-											styleClass="login_label" />
-										<h:inputSecret id="password"
-											value="#{loginBean.user.password}" />
-
-										<br />
-										<h:commandButton value="Вход" action="#{loginBean.login}" />
-
-									</h:panelGrid>
-								</div>
+								<ui:include src="loginform.xhtml" />
 							</h:form>
 							<h:form rendered="#{loginBean.logged == true}">
-								<div class="login_row">
-									<h:outputLabel value="Здравей, #{loginBean.user.name}" />
-									<br />
-									<h:commandButton value="Изход" action="#{loginBean.logout()}" />
-								</div>
+								<ui:include src="userinfo.xhtml" />
 							</h:form>
 						</div>
-
 					</div>
 					<div id="footer">
 						<img src="resources/images/footer_logo.gif" alt="" />All rights
@@ -133,11 +111,14 @@
 				<f:facet name="controls">
 					<h:outputLink value="#"
 						onclick="#{rich:component('popup')}.hide(); return false;">
-                X
-            </h:outputLink>
+                	X
+            		</h:outputLink>
 				</f:facet>
+				<h:form rendered="#{loginBean.logged == false}">
+					<ui:include src="loginform.xhtml" />
+				</h:form>
 
-				<h:panelGrid>
+				<h:panelGrid rendered="#{loginBean.logged == true}">
 					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
 						width="636" height="482" id="sf">

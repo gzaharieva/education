@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<div class="login_row">
+		<h:outputLabel value="Потребителски вход" />
+		<h:message />
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Емайл:" for="email" styleClass="login_label" />
+			<h:inputText id="email" value="#{loginBean.user.email}"
+				required="true" />
+
+			<h:outputLabel value="Парола:" for="password"
+				styleClass="login_label" />
+			<h:inputSecret id="password" value="#{loginBean.user.password}" />
+
+			<br />
+			<h:commandButton value="Вход" action="#{loginBean.login}" />
+
+		</h:panelGrid>
+	</div>
+</ui:composition>

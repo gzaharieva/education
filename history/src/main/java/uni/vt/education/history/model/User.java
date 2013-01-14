@@ -6,8 +6,6 @@ public class User {
 	private String email;
 	private String password;
 	private String username;
-	private String rank;
-	private int score;
 
 	public User() {
 		this(0, null, null, null);
@@ -45,22 +43,6 @@ public class User {
 		this.username = username;
 	}
 
-	public String getRank() {
-		return rank;
-	}
-
-	public void setRank(String rank) {
-		this.rank = rank;
-	}
-
-	public int getScore() {
-		return score;
-	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
-
 	/**
 	 * @return the id
 	 */
@@ -69,11 +51,11 @@ public class User {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
 	};
 
-	
 }

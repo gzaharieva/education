@@ -12,147 +12,128 @@
 			href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" />
 	</h:head>
 	<body>
-	<h:form>
-		<div id="main_container">
-			<div class="top_illustration">
-				<img src="resources/images/been.png" alt="" width="156" height="143" />
-			</div>
-			<div id="header">
-				<div class="logo">
-					<a href="index.xhtml"><img src="resources/images/text.gif"
-						alt="" border="0" /></a>
+		<h:form>
+			<div id="main_container">
+				<div class="top_illustration">
+					<img src="resources/images/been.png" alt="" width="156"
+						height="143" />
 				</div>
-			</div>
-			<div id="menu_tab">
-				<ul class="menu" style="text-align: center; margin: auto">
-					<li><a href="index.xhtml" class="nav_selected"> Начало </a></li>
-					<li class="divider"></li>
-					<li><a href="tests.xhtml" class="nav"> Тестове</a></li>
-					<li class="divider"></li>
-					<li><a href="subjects.xhtml" class="nav">Теми</a></li>
-					<li class="divider"></li>
-					<li><a href="contact.html" class="nav">Контакти</a></li>
-				</ul>
-			</div>
-			<div id="main_content">
-				<div id="middle_banner">
-					<div class="middle_banner_content">
-						<img src="resources/images/3.png" alt="" class="deviz" />
-
+				<div id="header">
+					<div class="logo">
+						<a href="index.xhtml"><img src="resources/images/text.gif"
+							alt="" border="0" /></a>
 					</div>
 				</div>
-				<div id="left_content">
-					<h1>Скъпи приятели</h1>
-					<p>Добре дошли в образователния сайт ”Историята - близо до
-						теб”. Използвайки неговото съдържание, вие ще се запознаете с
-						интересни събития, величествени битки и емблематични личности,
-						свързани с многовековната българската история. Тези знания, които
-						може да придобиете ще ви бъдат полезни за да осмислите пътя,
-						паденията и триумфите на българския народ през столетията.
-						Тестовите въпроси ще ви ориетират в нивото на познанията ви и ще
-						затвърдят новото с което сте научили.</p>
-					<br /> <br />
-					<!-- <h1>Нашите услуги</h1> -->
-					<br />
-					<p class="clear">
-						<img src="resources/images/icon4.png" alt="" class="img"
-							width="48" height="48" />Предлага ме ви увлекателни текстове,
-						илюстриращи моменти от българското минало и неговите
-						първостроители.
-					</p>
-					<br /> <br />
-					<p class="clear">
-						<img src="resources/images/tests-icon.png" alt="" class="img"
-							width="48" height="48" />„Колко зная?”Специално подбрани
-						въпроси, под формата на тест.
-					</p>
+				<div id="menu_tab">
+					<ul class="menu" style="text-align: center; margin: auto">
+						<li><a href="index.xhtml" class="nav_selected"> Начало </a></li>
+						<li class="divider"></li>
+						<li><a href="tests.xhtml" class="nav"> Тестове</a></li>
+						<li class="divider"></li>
+						<li><a href="subjects.xhtml" class="nav">Теми</a></li>
+						<li class="divider"></li>
+						<li><a href="contact.html" class="nav">Контакти</a></li>
+					</ul>
 				</div>
-				<div id="right_content">
-					<div class="members_login">
-						<h:form rendered="#{loginBean.logged == false}">
-							<div class="login_row">
-								<h:outputLabel value="Потребителски вход" />
-								<h:panelGrid columns="2">
-									<h:outputLabel value="Емайл:" for="email"
-										styleClass="login_label" />
-									<h:inputText id="email" value="#{loginBean.user.email}"
-										required="true" />
+				<div id="main_content">
+					<div id="middle_banner">
+						<div class="middle_banner_content">
+							<img src="resources/images/3.png" alt="" class="deviz" />
 
-									<h:outputLabel value="Парола:" for="password"
-										styleClass="login_label" />
-									<h:inputSecret id="password" value="#{loginBean.user.password}" />
-
-									<br />
-									<h:commandButton value="Вход" action="#{loginBean.login}" />
-
-								</h:panelGrid>
-							</div>
-						</h:form>
-						<h:form rendered="#{loginBean.logged == true}">
-							<div class="login_row">
-								<h:outputLabel value="Здравей, #{loginBean.username}" />
-								<br />
-								<h:commandButton value="Изход" action="#{loginBean.logout()}" />
-							</div>
-						</h:form>
+						</div>
 					</div>
-					<h1 class="label">Интересно</h1>
-					<div style="text-align:center">	
-					<h:commandLink value="">
-					<p class="news">
-						<img src="resources/images/info.png" alt="" class="left_img" />
-						България по време на втората световна война (1939-1945)
-					</p>
-						<rich:componentControl target="popup" operation="show" />
-					</h:commandLink>
-					
-					<h:commandLink value="">
-						<p class="news">
-							<img src="resources/images/info.png" alt="" class="left_img" />
-							Държавно-политическо и обществено-икономическо развитие на
-							България (1919 - 1923)
+					<div id="left_content">
+						<h1>Скъпи приятели</h1>
+						<p>Добре дошли в образователния сайт ”Историята - близо до
+							теб”. Използвайки неговото съдържание, вие ще се запознаете с
+							интересни събития, величествени битки и емблематични личности,
+							свързани с многовековната българската история. Тези знания, които
+							може да придобиете ще ви бъдат полезни за да осмислите пътя,
+							паденията и триумфите на българския народ през столетията.
+							Тестовите въпроси ще ви ориетират в нивото на познанията ви и ще
+							затвърдят новото с което сте научили.</p>
+						<br /> <br />
+						<!-- <h1>Нашите услуги</h1> -->
+						<br />
+						<p class="clear">
+							<img src="resources/images/icon4.png" alt="" class="img"
+								width="48" height="48" />Предлага ме ви увлекателни текстове,
+							илюстриращи моменти от българското минало и неговите
+							първостроители.
 						</p>
-						<rich:componentControl target="popup" operation="show" />
-					</h:commandLink>
-					
-					<h:commandLink value="">
-					<p class="news">
-						<img src="resources/images/info.png" alt="" class="left_img" />Националноосвободително
-						движение от края на 60-те до средата на 70-те години.
-					</p>
-					<rich:componentControl target="popup" operation="show" />
-					</h:commandLink>
+						<br /> <br />
+						<p class="clear">
+							<img src="resources/images/tests-icon.png" alt="" class="img"
+								width="48" height="48" />„Колко зная?”Специално подбрани
+							въпроси, под формата на тест.
+						</p>
+					</div>
+					<div id="right_content">
+						<div class="members_login">
+							<h:form rendered="#{loginBean.logged == false}">
+								<ui:include src="loginform.xhtml" />
+							</h:form>
+							<h:form rendered="#{loginBean.logged == true}">
+								<ui:include src="userinfo.xhtml" />
+							</h:form>
+						</div>
+						<h1 class="label">Интересно</h1>
+						<div style="text-align: center">
+							<h:commandLink value="">
+								<p class="news">
+									<img src="resources/images/info.png" alt="" class="left_img" />
+									България по време на втората световна война (1939-1945)
+								</p>
+								<rich:componentControl target="popup" operation="show" />
+							</h:commandLink>
+
+							<h:commandLink value="">
+								<p class="news">
+									<img src="resources/images/info.png" alt="" class="left_img" />
+									Държавно-политическо и обществено-икономическо развитие на
+									България (1919 - 1923)
+								</p>
+								<rich:componentControl target="popup" operation="show" />
+							</h:commandLink>
+
+							<h:commandLink value="">
+								<p class="news">
+									<img src="resources/images/info.png" alt="" class="left_img" />Националноосвободително
+									движение от края на 60-те до средата на 70-те години.
+								</p>
+								<rich:componentControl target="popup" operation="show" />
+							</h:commandLink>
+						</div>
+					</div>
+					<div id="footer">
+						<img src="resources/images/footer_logo.gif" alt="" />All rights
+						reserved &copy; 2013 <br />
 					</div>
 				</div>
-				<div id="footer">
-					<img src="resources/images/footer_logo.gif" alt="" />All rights
-					reserved &copy; 2013 <br />
-				</div>
 			</div>
-		</div>
 
-		<rich:popupPanel id="popup" modal="true" resizeable="false"
-			width="680" height="550">
-			<f:facet name="header">
-				<h:outputText value="Tests" />
-			</f:facet>
-			<f:facet name="controls">
-				<h:outputLink value="#"
-					onclick="#{rich:component('popup')}.hide(); return false;">
+			<rich:popupPanel id="popup" modal="true" resizeable="false"
+				width="680" height="550">
+				<f:facet name="header">
+					<h:outputText value="Tests" />
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#"
+						onclick="#{rich:component('popup')}.hide(); return false;">
                 X
             </h:outputLink>
-			</f:facet>
+				</f:facet>
 
-			<h:panelGrid style="text-align:justify">
-			<h3>България по време на втората световна война (1939-1945)</h3>
-			<hr />
-				<h:outputText
-					value="  Сключването на Версайската система от мирни договори (1919 г.), която фиксира края на Първата световна война, прехвърляйки цялата вина само върху победените, поставя началото на пътя към Втората световна война. Териториално и икономически ограбени, национално унизени и лишени от собствена армия, победените държави стават гнездо на един неизбежен реваншизъм. Идеята за ревизия на мирните договори се предвожда от Германия, особено след като през 1933 г. Адолф Хитлер идва на власт. Германия започва да отхвърля една след друга ограничителните клаузи на Версайския договор. През 1935 година Германия въвежда отново задължителната военна повинност, а на следващата година окупира със своитевойски демилитаризираната от договора Рейнска област. Разочарованата от резултатите от Първата световна вийна Италия също започва експанзионистична политика и окупира Етиопия. Далновидните политици си дават сметка, че избухването на войната е въпрос на време.
+				<h:panelGrid style="text-align:justify">
+					<h3>България по време на втората световна война (1939-1945)</h3>
+					<hr />
+					<h:outputText
+						value="  Сключването на Версайската система от мирни договори (1919 г.), която фиксира края на Първата световна война, прехвърляйки цялата вина само върху победените, поставя началото на пътя към Втората световна война. Териториално и икономически ограбени, национално унизени и лишени от собствена армия, победените държави стават гнездо на един неизбежен реваншизъм. Идеята за ревизия на мирните договори се предвожда от Германия, особено след като през 1933 г. Адолф Хитлер идва на власт. Германия започва да отхвърля една след друга ограничителните клаузи на Версайския договор. През 1935 година Германия въвежда отново задължителната военна повинност, а на следващата година окупира със своитевойски демилитаризираната от договора Рейнска област. Разочарованата от резултатите от Първата световна вийна Италия също започва експанзионистична политика и окупира Етиопия. Далновидните политици си дават сметка, че избухването на войната е въпрос на време.
                        Инициативата на фашистките държави не се посреща с нужното внимание и решителност от страна на Англия и Франция. Що се отнася до СССР, Москва никога не се примирява със загубените след Първата световна война територии и също се ориентира към ревизия.
                    В тази сложна обстановка за България няма друга алтернатива освен да поддържа своя неутралитет и необвързаност. В началото на 30-те години неутралитетът дава своите първи плодове с премахването на репарационните задължения. На преден план излизат надеждите за постигане на освобождаване на страната от ограничителните военни клаузи. Пред настъпващата война българското правителство разбира много добре, че без модернизирана армия няма да има възможност да отстоява своите национални интереси и суверенитет. След като се допуска въоръжаването на Германия, не закъснява и “пробивът” за България. На 31 юли 1938 година България подписва със страните от Балканския пакт (Гърция, Турция, Румъния и Югославия) Солунската спогодба, която премахва ограничителните военни клаузи за страната ни. Чрез тази спогодба България отхвърля най-тежките клаузи на Ньойския договор, без да нарушава своя неутралитет и необвързаност и без да поема допълнителни ангажименти в замяна на възвърнатото право. От този момент външната политика на България се подчинява на стремежа за постигане на мирна ревизия." />
-			</h:panelGrid>
+				</h:panelGrid>
 
-		</rich:popupPanel>
+			</rich:popupPanel>
 		</h:form>
 	</body>
 </ui:composition>
