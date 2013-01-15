@@ -3,7 +3,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:rich="http://richfaces.org/rich">
+	xmlns:rich="http://richfaces.org/rich"
+		xmlns:p="http://primefaces.org/ui">
 
 	<h:head>
 
@@ -50,18 +51,18 @@
 								<h:commandLink value="" class="image_test">
 									<img src="resources/images/test1.png" class="image_test_link" />
 									<rich:componentControl target="popup" operation="show" />
-									<h:outputLabel value="Средновековна история" />
+									<h:outputLabel value="Средновековна българска история" />
 								</h:commandLink>
 								<h:commandLink value="" class="image_test">
-									<img src="resources/images/test1.png" class="image_test_link" />
-									<rich:componentControl target="popup" operation="show" />
-									<h:outputLabel value="Нова българска история" />
+									<img src="resources/images/test2.png" class="image_test_link" />
+									<rich:componentControl target="popup2" operation="show" />
+									<h:outputLabel value="Средновековна история" />
 
 								</h:commandLink>
 								<h:commandLink value="" class="image_test">
-									<img src="resources/images/test1.png" class="image_test_link" />
-									<rich:componentControl target="popup" operation="show" />
-									<h:outputLabel value="Обща история" />
+									<img src="resources/images/test3.png" class="image_test_link" />
+									<rich:componentControl target="popup3" operation="show" />
+									<h:outputLabel value="Българска история 15-17 век" />
 
 								</h:commandLink>
 
@@ -69,19 +70,19 @@
 							<hr />
 							<div>
 								<h:commandLink value="" class="image_test">
-									<img src="resources/images/test1.png" class="image_test_link" />
-									<rich:componentControl target="popup" operation="show" />
-									<h:outputLabel value="Обща история" />
+									<img src="resources/images/test4.png" class="image_test_link" />
+									<rich:componentControl target="popup4" operation="show" />
+									<h:outputLabel value="Българска обща история" />
 								</h:commandLink>
 								<h:commandLink value="" class="image_test">
-									<img src="resources/images/test1.png" class="image_test_link" />
-									<rich:componentControl target="popup" operation="show" />
-									<h:outputLabel value="Обща история" />
+									<img src="resources/images/test5.png" class="image_test_link" />
+									<rich:componentControl target="popup5" operation="show" />
+									<h:outputLabel value="Средновековна история" />
 								</h:commandLink>
 								<h:commandLink value="" class="image_test">
-									<img src="resources/images/test1.png" class="image_test_link" />
-									<rich:componentControl target="popup" operation="show" />
-									<h:outputLabel value="Обща история" />
+									<img src="resources/images/test6.png" class="image_test_link" />
+									<rich:componentControl target="popup6" operation="show" />
+									<h:outputLabel value="Българските земи 16-17 век" />
 								</h:commandLink>
 							</div>
 						</center>
@@ -95,6 +96,30 @@
 								<ui:include src="userinfo.xhtml" />
 							</h:form>
 						</div>
+						<h1>Видео</h1>
+						<p:lightBox>
+							<h:outputLink value="#">
+								<h:graphicImage value="resources/images/videos/video5.jpg" />
+							</h:outputLink>
+
+							<f:facet name="inline" >
+								<p:media value="http://www.youtube.com/v/1NvnsYNyEN0?autoplay=1"
+									width="570" height="400" player="flash"
+									styleClass="flash_video" />
+							</f:facet>
+						</p:lightBox>
+						<p:lightBox>
+							<h:outputLink value="#">
+								<h:graphicImage value="resources/images/videos/video4.jpg" />
+							</h:outputLink>
+
+							<f:facet name="inline">
+								<p:media value="http://www.youtube.com/v/3euTbLU7yIA?autoplay=1"
+									width="570" height="400" player="flash"
+									styleClass="flash_video" />
+							</f:facet>
+						</p:lightBox>
+
 					</div>
 					<div id="footer">
 						<img src="resources/images/footer_logo.gif" alt="" />All rights
@@ -106,7 +131,7 @@
 			<rich:popupPanel id="popup" modal="true" resizeable="false"
 				width="680" height="550">
 				<f:facet name="header">
-					<h:outputText value="Tests" />
+					<h:outputText value="Тест" />
 				</f:facet>
 				<f:facet name="controls">
 					<h:outputLink value="#"
@@ -128,6 +153,172 @@
 						<param name="allowScriptAccess" value="always" />
 						<param name="allowFullScreen" value="true" />
 						<embed src="tests/quiz.swf" quality="high" name="sf"
+							allowScriptAccess="always" allowFullScreen="true"
+							pluginspage="http://www.macromedia.com/go/getflashplayer"
+							type="application/x-shockwave-flash" width="636" height="482" />
+					</object>
+				</h:panelGrid>
+
+			</rich:popupPanel>
+			<rich:popupPanel id="popup2" modal="true" resizeable="false"
+				width="680" height="550">
+				<f:facet name="header">
+					<h:outputText value="Тест" />
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#"
+						onclick="#{rich:component('popup2')}.hide(); return false;">
+                	X
+            		</h:outputLink>
+				</f:facet>
+				<h:form rendered="#{loginBean.logged == false}">
+					<ui:include src="loginform.xhtml" />
+				</h:form>
+
+				<h:panelGrid rendered="#{loginBean.logged == true}">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+						width="636" height="482" id="sf">
+						<param name="movie" value="../quiz.swf" />
+						<param name="quality" value="high" />
+						<param name="wmode" value="window" />
+						<param name="allowScriptAccess" value="always" />
+						<param name="allowFullScreen" value="true" />
+						<embed src="tests/quiz2.swf" quality="high" name="sf"
+							allowScriptAccess="always" allowFullScreen="true"
+							pluginspage="http://www.macromedia.com/go/getflashplayer"
+							type="application/x-shockwave-flash" width="636" height="482" />
+					</object>
+				</h:panelGrid>
+
+			</rich:popupPanel>
+
+			<rich:popupPanel id="popup3" modal="true" resizeable="false"
+				width="680" height="550">
+				<f:facet name="header">
+					<h:outputText value="Тест" />
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#"
+						onclick="#{rich:component('popup3')}.hide(); return false;">
+                	X
+            		</h:outputLink>
+				</f:facet>
+				<h:form rendered="#{loginBean.logged == false}">
+					<ui:include src="loginform.xhtml" />
+				</h:form>
+
+				<h:panelGrid rendered="#{loginBean.logged == true}">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+						width="636" height="482" id="sf">
+						<param name="movie" value="../quiz.swf" />
+						<param name="quality" value="high" />
+						<param name="wmode" value="window" />
+						<param name="allowScriptAccess" value="always" />
+						<param name="allowFullScreen" value="true" />
+						<embed src="tests/quiz3.swf" quality="high" name="sf"
+							allowScriptAccess="always" allowFullScreen="true"
+							pluginspage="http://www.macromedia.com/go/getflashplayer"
+							type="application/x-shockwave-flash" width="636" height="482" />
+					</object>
+				</h:panelGrid>
+
+			</rich:popupPanel>
+
+			<rich:popupPanel id="popup4" modal="true" resizeable="false"
+				width="680" height="550">
+				<f:facet name="header">
+					<h:outputText value="Тест" />
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#"
+						onclick="#{rich:component('popup4')}.hide(); return false;">
+                	X
+            		</h:outputLink>
+				</f:facet>
+				<h:form rendered="#{loginBean.logged == false}">
+					<ui:include src="loginform.xhtml" />
+				</h:form>
+
+				<h:panelGrid rendered="#{loginBean.logged == true}">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+						width="636" height="482" id="sf">
+						<param name="movie" value="../quiz.swf" />
+						<param name="quality" value="high" />
+						<param name="wmode" value="window" />
+						<param name="allowScriptAccess" value="always" />
+						<param name="allowFullScreen" value="true" />
+						<embed src="tests/quiz4.swf" quality="high" name="sf"
+							allowScriptAccess="always" allowFullScreen="true"
+							pluginspage="http://www.macromedia.com/go/getflashplayer"
+							type="application/x-shockwave-flash" width="636" height="482" />
+					</object>
+				</h:panelGrid>
+
+			</rich:popupPanel>
+
+
+			<rich:popupPanel id="popup5" modal="true" resizeable="false"
+				width="680" height="550">
+				<f:facet name="header">
+					<h:outputText value="Тест" />
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#"
+						onclick="#{rich:component('popup5')}.hide(); return false;">
+                	X
+            		</h:outputLink>
+				</f:facet>
+				<h:form rendered="#{loginBean.logged == false}">
+					<ui:include src="loginform.xhtml" />
+				</h:form>
+
+				<h:panelGrid rendered="#{loginBean.logged == true}">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+						width="636" height="482" id="sf">
+						<param name="movie" value="../quiz.swf" />
+						<param name="quality" value="high" />
+						<param name="wmode" value="window" />
+						<param name="allowScriptAccess" value="always" />
+						<param name="allowFullScreen" value="true" />
+						<embed src="tests/quiz5.swf" quality="high" name="sf"
+							allowScriptAccess="always" allowFullScreen="true"
+							pluginspage="http://www.macromedia.com/go/getflashplayer"
+							type="application/x-shockwave-flash" width="636" height="482" />
+					</object>
+				</h:panelGrid>
+
+			</rich:popupPanel>
+
+
+			<rich:popupPanel id="popup6" modal="true" resizeable="false"
+				width="680" height="550">
+				<f:facet name="header">
+					<h:outputText value="Тест" />
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#"
+						onclick="#{rich:component('popup6')}.hide(); return false;">
+                	X
+            		</h:outputLink>
+				</f:facet>
+				<h:form rendered="#{loginBean.logged == false}">
+					<ui:include src="loginform.xhtml" />
+				</h:form>
+
+				<h:panelGrid rendered="#{loginBean.logged == true}">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+						width="636" height="482" id="sf">
+						<param name="movie" value="../quiz.swf" />
+						<param name="quality" value="high" />
+						<param name="wmode" value="window" />
+						<param name="allowScriptAccess" value="always" />
+						<param name="allowFullScreen" value="true" />
+						<embed src="tests/quiz6.swf" quality="high" name="sf"
 							allowScriptAccess="always" allowFullScreen="true"
 							pluginspage="http://www.macromedia.com/go/getflashplayer"
 							type="application/x-shockwave-flash" width="636" height="482" />

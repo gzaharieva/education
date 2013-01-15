@@ -63,7 +63,7 @@
 	</properties>
 
 	<build>
-		<finalName>bidding</finalName>
+		<finalName>history</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

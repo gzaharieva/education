@@ -19,7 +19,7 @@ import uni.vt.education.history.model.User;
 public class UserDAO {
 	private static final String DB_URL = "jdbc:postgresql://localhost/postgres";
 	private static final String DB_USER = "postgres";
-	private static final String DB_PASSWORD = "vitkinov"; // "admin";
+	private static final String DB_PASSWORD = "admin"; // "admin";
 	private Connection connection;
 
 	public UserDAO() {
