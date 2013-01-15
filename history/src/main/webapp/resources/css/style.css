@@ -169,12 +169,21 @@ a.nav:hover {
 	background-size: 800px 260px;
 }
 
-#middle_banner_tests{
+#middle_banner_tests {
 	width: 800px;
 	height: 250px;
 	margin: auto;
 	padding: 20px 0 0 0;
 	background: url(../images/quiz_banner.jpg) no-repeat center;
+	background-size: 800px 260px;
+}
+
+#middle_banner_contacts {
+	width: 800px;
+	height: 250px;
+	margin: auto;
+	padding: 20px 0 0 0;
+	background: url(../images/contacts_banner.jpg) no-repeat center;
 	background-size: 800px 260px;
 }
 
@@ -221,7 +230,6 @@ a.nav:hover {
 	padding: 10px 0 0 10px;
 	background: url(../images/login_bg.gif) no-repeat center;
 	margin-top: 40;
-	
 }
 
 .login_row {
@@ -235,7 +243,7 @@ label.login {
 	float: left;
 	text-align: right;
 	padding: 4px 8px 0 0;
-	font-size:10px;
+	font-size: 10px;
 }
 
 input.login_input {
@@ -360,7 +368,6 @@ input.contact_submit {
 	height: 242px;
 }
 
-
 #slider-left-but {
 	display: block;
 	width: 30px;
@@ -381,34 +388,31 @@ input.contact_submit {
 .cloudcarousel {
 	width: 240px;
 	height: 180px;
-	
 }
 
 .label {
 	padding-top: 40px;
-	
 }
 /*-----------------*/
 .img {
-		padding: 5px 12px 0 0;
-		width: 40px;
-		height: 40px;
+	padding: 5px 12px 0 0;
+	width: 40px;
+	height: 40px;
 }
 
 .login_label {
 	font-size: 10px;
 }
 
-
 /************TESTS page***************/
 .image_test {
 	width: 130px;
 	height: 100px;
-	float: left;	
+	float: left;
 	margin: 20px;
 }
 
-.image_test_link {	
+.image_test_link {
 	width: 130px;
 	height: 100px;
 }
@@ -420,19 +424,18 @@ input.contact_submit {
 }
 
 .flash_video {
-	margin-top:-450px;
+	margin-top: -450px;
 }
 
 .panel {
-	
-	top:100px!important;
+	top: 100px !important;
 	text-align: justify;
-	
 }
+
 .ui-widget {
-	font-size: 1.5em!important;
+	font-size: 1.5em !important;
 }
 
 .login_row_margin {
-	margin-top:20px;	
+	margin-top: 20px;
 }

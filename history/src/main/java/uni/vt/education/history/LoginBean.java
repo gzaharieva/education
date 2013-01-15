@@ -18,8 +18,8 @@ package uni.vt.education.history;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
@@ -32,7 +32,7 @@ import uni.vt.education.history.model.User;
  * 
  * @author a.vitkinov
  */
-@ApplicationScoped
+@SessionScoped
 @ManagedBean
 public class LoginBean implements Serializable {
 
@@ -49,6 +49,7 @@ public class LoginBean implements Serializable {
 		user = new User();
 		logged = false;
 		userDAO = new UserDAO();
+		System.out.println("LoginBean init");
 	}
 
 	public User getUser() {

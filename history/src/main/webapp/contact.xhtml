@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<h:head>
+		<link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+
+	</h:head>
+	<body>
+		<div id="main_container">
+			<div class="top_illustration">
+				<img src="resources/images/been.png" alt="" width="156" height="143" />
+			</div>
+			<div id="header">
+				<div class="logo">
+					<a href=""><img src="resources/images/text.gif" alt=""
+						border="0" /></a>
+				</div>
+			</div>
+			<div id="menu_tab">
+				<ul class="menu" style="text-align: center; margin: auto">
+					<li><a href="index.xhtml" class="nav"> Начало </a></li>
+					<li class="divider"></li>
+					<li><a href="tests.xhtml" class="nav"> Тестове</a></li>
+					<li class="divider"></li>
+					<li><a href="subjects.xhtml" class="nav">Теми</a></li>
+					<li class="divider"></li>
+					<li><a href="contact.html" class="nav_selected">Контакти</a></li>
+				</ul>
+			</div>
+			<div id="main_content">
+				<div id="middle_banner_contacts">
+					<div class="middle_banner_content"></div>
+				</div>
+				<div id="left_content">
+					<h1>Контакти</h1>
+					<p style="line-height: 18px;">
+						<span>Име:</span> Габриела Захариева<br /> <span>Телефон:
+						</span>+359888 456 345 / +359888 256 236 <br /> <span>Fax: </span>+359888
+						356 345 / +359888 456 236 <br /> <span>Email: </span><a
+							href="mailto:gabriela.zaharieva@gmail.com">gabriela.zaharieva@gmail.com</a>
+						<br /> <br /> <span>Име: </span>Аспарух Виткинов <br /> <span>Phone:
+						</span> +359886 255 911 / +359878 255 912<br /> <span>Email: </span> <a
+							href="mailto:vitkinov90@gmail.com">vitkinov90@gmail.com</a> <br />
+					</p>
+					<h1>Форма за връзка</h1>
+					<div id="contact_form">
+						<label class="contact_form">Потребител:</label> <input type="text"
+							name="user" class="contact_input" />
+						<div class="cleardiv"></div>
+						<label class="contact_form">е-mail:</label> <input type="text"
+							name="payuity" class="contact_input" />
+						<div class="cleardiv"></div>
+						<label class="contact_form">Текст:</label>
+						<textarea name="text" cols="" rows="" class="contact_textarea"></textarea>
+						<div class="cleardiv"></div>
+						<input type="image" src="resources/images/submit.gif"
+							class="contact_submit" />
+					</div>
+				</div>
+
+				<div id="footer">
+					<img src="resources/images/footer_logo.gif" alt="" /> History
+					&copy; All rights reserved 2013 <br />
+				</div>
+			</div>
+		</div>
+	</body>
+</ui:composition>
