@@ -16,6 +16,7 @@
 package uni.vt.education.history;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -86,6 +87,19 @@ public class LoginBean implements Serializable {
 			setLogged(true);
 		}
 
+		return tResult;
+	}
+
+	public String register() {
+		String tResult = null;
+		
+		try {
+			userDAO.addUser(user);
+			tResult = "index";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return tResult;
 	}
 

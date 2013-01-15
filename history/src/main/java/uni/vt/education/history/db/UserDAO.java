@@ -19,7 +19,7 @@ import uni.vt.education.history.model.User;
 public class UserDAO {
 	private static final String DB_URL = "jdbc:postgresql://localhost/postgres";
 	private static final String DB_USER = "postgres";
-	private static final String DB_PASSWORD = "admin"; // "admin";
+	private static final String DB_PASSWORD = "admin";
 	private Connection connection;
 
 	public UserDAO() {
@@ -34,8 +34,10 @@ public class UserDAO {
 		}
 	}
 
-	public void addUser(User user) {
+	public void addUser(User user) throws SQLException {
 		try {
+			connection = DriverManager.getConnection(DB_URL, DB_USER,
+					DB_PASSWORD);
 			String sql = "INSERT into users (username, password, email) values(?, ?, ?)";
 			PreparedStatement statment = connection.prepareStatement(sql);
 			statment.setString(1, user.getUsername());
@@ -47,6 +49,7 @@ public class UserDAO {
 
 		} catch (SQLException s) {
 			s.printStackTrace();
+			throw s;
 		}
 	}
 
@@ -57,6 +60,8 @@ public class UserDAO {
 			String sql = "SELECT id, username FROM users "
 					+ " WHERE email=? AND password=?";// WHERE name like '%" +
 														// name + "%'  ";
+			connection = DriverManager.getConnection(DB_URL, DB_USER,
+					DB_PASSWORD);
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, email);
 			statement.setString(2, password);
