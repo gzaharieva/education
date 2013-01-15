@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:rich="http://richfaces.org/rich"
-		xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui">
 
 	<h:head>
 
@@ -50,18 +50,20 @@
 							<div style="margin-bottom: 200px;">
 								<h:commandLink value="" class="image_test">
 									<img src="resources/images/test1.png" class="image_test_link" />
-									<rich:componentControl target="popup" operation="show" />
+									<rich:componentControl
+										target="#{loginBean.logged ? 'popup' : 'loginPopup'}"
+										operation="show" />
 									<h:outputLabel value="Средновековна българска история" />
 								</h:commandLink>
 								<h:commandLink value="" class="image_test">
 									<img src="resources/images/test2.png" class="image_test_link" />
-									<rich:componentControl target="popup2" operation="show" />
+									<rich:componentControl target="#{loginBean.logged ? 'popup2' : 'loginPopup'}" operation="show" />
 									<h:outputLabel value="Средновековна история" />
 
 								</h:commandLink>
 								<h:commandLink value="" class="image_test">
 									<img src="resources/images/test3.png" class="image_test_link" />
-									<rich:componentControl target="popup3" operation="show" />
+									<rich:componentControl target="#{loginBean.logged ? 'popup3' : 'loginPopup'}" operation="show" />
 									<h:outputLabel value="Българска история 15-17 век" />
 
 								</h:commandLink>
@@ -71,17 +73,17 @@
 							<div>
 								<h:commandLink value="" class="image_test">
 									<img src="resources/images/test4.png" class="image_test_link" />
-									<rich:componentControl target="popup4" operation="show" />
+									<rich:componentControl target="#{loginBean.logged ? 'popup4' : 'loginPopup'}" operation="show" />
 									<h:outputLabel value="Българска обща история" />
 								</h:commandLink>
 								<h:commandLink value="" class="image_test">
 									<img src="resources/images/test5.png" class="image_test_link" />
-									<rich:componentControl target="popup5" operation="show" />
+									<rich:componentControl target="#{loginBean.logged ? 'popup5' : 'loginPopup'}" operation="show" />
 									<h:outputLabel value="Средновековна история" />
 								</h:commandLink>
 								<h:commandLink value="" class="image_test">
 									<img src="resources/images/test6.png" class="image_test_link" />
-									<rich:componentControl target="popup6" operation="show" />
+									<rich:componentControl target="#{loginBean.logged ? 'popup6' : 'loginPopup'}" operation="show" />
 									<h:outputLabel value="Българските земи 16-17 век" />
 								</h:commandLink>
 							</div>
@@ -102,7 +104,7 @@
 								<h:graphicImage value="resources/images/videos/video5.jpg" />
 							</h:outputLink>
 
-							<f:facet name="inline" >
+							<f:facet name="inline">
 								<p:media value="http://www.youtube.com/v/1NvnsYNyEN0?autoplay=1"
 									width="570" height="400" player="flash"
 									styleClass="flash_video" />
@@ -128,6 +130,22 @@
 				</div>
 			</div>
 
+			<rich:popupPanel id="loginPopup" modal="true" resizeable="false"
+				width="680" height="70">
+				<f:facet name="header">
+					<h:outputText value="Грешка" />
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#"
+						onclick="#{rich:component('loginPopup')}.hide(); return false;">
+                	X
+            		</h:outputLink>
+				</f:facet>
+
+				<h:outputText id="loginError"
+					value="За да започнете тестовете първо трябва да влезете в системата с потребителското си име!" />
+			</rich:popupPanel>
+
 			<rich:popupPanel id="popup" modal="true" resizeable="false"
 				width="680" height="550">
 				<f:facet name="header">
@@ -139,11 +157,8 @@
                 	X
             		</h:outputLink>
 				</f:facet>
-				<h:form rendered="#{loginBean.logged == false}">
-					<ui:include src="loginform.xhtml" />
-				</h:form>
 
-				<h:panelGrid rendered="#{loginBean.logged == true}">
+				<h:panelGrid>
 					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
 						width="636" height="482" id="sf">
@@ -158,8 +173,8 @@
 							type="application/x-shockwave-flash" width="636" height="482" />
 					</object>
 				</h:panelGrid>
-
 			</rich:popupPanel>
+
 			<rich:popupPanel id="popup2" modal="true" resizeable="false"
 				width="680" height="550">
 				<f:facet name="header">
@@ -171,11 +186,8 @@
                 	X
             		</h:outputLink>
 				</f:facet>
-				<h:form rendered="#{loginBean.logged == false}">
-					<ui:include src="loginform.xhtml" />
-				</h:form>
 
-				<h:panelGrid rendered="#{loginBean.logged == true}">
+				<h:panelGrid>
 					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
 						width="636" height="482" id="sf">
@@ -204,11 +216,8 @@
                 	X
             		</h:outputLink>
 				</f:facet>
-				<h:form rendered="#{loginBean.logged == false}">
-					<ui:include src="loginform.xhtml" />
-				</h:form>
 
-				<h:panelGrid rendered="#{loginBean.logged == true}">
+				<h:panelGrid>
 					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
 						width="636" height="482" id="sf">
@@ -237,11 +246,8 @@
                 	X
             		</h:outputLink>
 				</f:facet>
-				<h:form rendered="#{loginBean.logged == false}">
-					<ui:include src="loginform.xhtml" />
-				</h:form>
-
-				<h:panelGrid rendered="#{loginBean.logged == true}">
+			
+				<h:panelGrid>
 					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
 						width="636" height="482" id="sf">
@@ -271,11 +277,8 @@
                 	X
             		</h:outputLink>
 				</f:facet>
-				<h:form rendered="#{loginBean.logged == false}">
-					<ui:include src="loginform.xhtml" />
-				</h:form>
 
-				<h:panelGrid rendered="#{loginBean.logged == true}">
+				<h:panelGrid>
 					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
 						width="636" height="482" id="sf">
@@ -305,11 +308,8 @@
                 	X
             		</h:outputLink>
 				</f:facet>
-				<h:form rendered="#{loginBean.logged == false}">
-					<ui:include src="loginform.xhtml" />
-				</h:form>
 
-				<h:panelGrid rendered="#{loginBean.logged == true}">
+				<h:panelGrid>
 					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
 						width="636" height="482" id="sf">
